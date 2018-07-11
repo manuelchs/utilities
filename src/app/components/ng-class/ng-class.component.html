@@ -1,0 +1,21 @@
+<div [ngClass]="alert" class="alert" role="alert">
+  A simple primary alert—check it out!
+</div>
+<button class="btn btn-primary" (click)="alert = 'alert-primary'">PRIMARY</button>
+<button class="btn btn-secondary" (click)="alert = 'alert-secondary'">SECONDARY</button>
+<button class="btn btn-success" (click)="alert = 'alert-success'">SUCCESS</button>
+<button class="btn btn-danger" (click)="alert = 'alert-danger'">DANGER</button>
+<button class="btn btn-warning" (click)="alert = 'alert-warning'">WARNING</button>
+
+<br><br>
+
+<h3 [ngClass]="{'text-danger':propieties.danger, 'text-success': !propieties.danger}">Hola mundo</h3>
+<button [ngClass]="{'btn-success':propieties.danger, 'btn-danger': !propieties.danger}" class="btn" (click)="propieties.danger = !propieties.danger">CHANGE</button>
+
+<br><br>
+
+<button (click)="process()" class="btn btn-primary" [disabled]="loading">
+  <i class="fa" [ngClass]="{'fa-save': !loading, 'fa-circle-notch fa-spin': loading}"></i> 
+  <span *ngIf="!loading"> Save changes</span>
+  <span *ngIf="loading"> Wait a moment</span>
+</button>
