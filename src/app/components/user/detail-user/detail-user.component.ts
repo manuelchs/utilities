@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detail-user',
@@ -7,9 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DetailUserComponent implements OnInit {
 
-  params: string;
-
-  constructor() {
+  id: string;
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.parent.params.subscribe(params => {
+      console.log('Ruta hija');
+      console.log(params);
+      this.id = params['id'];
+    });
   }
 
   ngOnInit() {

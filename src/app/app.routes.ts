@@ -7,11 +7,7 @@ import { USER_ROUTES } from './components/user/user.routes';
 const ROUTES: Routes = [
     { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent },
-    {
-        path: 'user/:id',
-        component:  UserComponent,
-        children: USER_ROUTES
-    },
+    { path: 'user/:id', component:  UserComponent, children: USER_ROUTES },
     { path: '**', pathMatch: 'full', redirectTo: '' }
 ];
 
